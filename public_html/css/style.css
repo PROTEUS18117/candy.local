@@ -1,0 +1,106 @@
+.my-icon {
+    width: 60px;
+    height: 60px;
+}
+
+body {
+    /*background:url("../img/s123.jpg")no-repeat;*/
+    /*background-size: cover;*/
+    height: 100%;
+}
+
+.hat {
+    background: url("../img/MR.jpg") no-repeat;
+    background-position: center;
+
+
+}
+
+.ivent {
+    background: url("../img/ivent.jpg") no-repeat;
+    background-size: 100%;
+    height: 521px;
+
+    box-sizing: border-box;
+}
+
+.field {
+    border-radius: 15px;
+}
+
+.white {
+    color: white;
+}
+
+
+.big {
+    font-family: 'Lobster', cursive;
+    font-size: 80px;
+}
+
+.gabriola {
+    font-family: Gabriola;
+    font-size: 300%;
+}
+
+.gradient {
+    background: linear-gradient(to top, #619284, #61b4a1);
+    padding: 10px;
+    border: 1px solid #333;
+    opacity: 0.9;
+}
+
+.semilayer {
+    padding: 5px; /* Поля вокруг текста */
+    /* Цвет фона */
+    margin: 0 auto; /* Выравниваем слой по центру */
+    width: 80%; /* Ширина слоя */
+    opacity: 0.8; /* Значение прозрачности */
+    filter: alpha(Opacity=70);
+}
+
+.bg {
+    background: url('../img/christmas_gingerbread_cookies_by_pimpyourscreen-wallpaper-1440x960.jpg') no-repeat;
+    background-size: cover;
+}
+
+.bear {
+    background: url('../img/eda.jpg') no-repeat;
+    background-size: 100%;
+
+}
+
+c
+.img {
+    height: 214.5px;
+}
+
+.opacity {
+    opacity: 0.8;
+}
+
+.jpg {
+    height: 380px;
+}
+
+.size {
+    height: 300px;
+    width: 300px;
+}
+
+.bcg {
+    background: url('../img/hello.jpg') no-repeat;
+    background-position: bottom;
+    background-size: cover;
+
+}
+
+.color {
+    color:#ffffff;
+    -webkit-text-stroke: 0.5px #000000;
+
+
+}
+.card {
+    height: 100%;
+}
