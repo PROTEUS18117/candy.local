@@ -31,6 +31,16 @@
                 <a class="nav-link white" href="#">Информация</a>
             </li>
         </ul>
+        <?php
+        $db = mysqli_connect('localhost', 'admin', 'password','candy') or die('Подключение к БД не удалось');
+        $query = "SELECT * FROM sweets";
+        $result = mysqli_query($db, $query);
+        $toys = [];
+        while($row = mysqli_fetch_array($result))
+        {
+            $toys[] = $row;
+        }
+        ?>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         </form>
@@ -69,56 +79,18 @@
                 <div>
                     <div class="container">
                         <div class=" row">
-                           <div class="mt-2 col-md-4">
-                                <div class="card opacity">
-                                    <img src="./img/svechi.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Название карточки</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <?php foreach ($toys as $toy): ?>
+                                <div class="mt-2 col-md-4">
+                                    <div class="card opacity">
+                                        <img src="img/<?php echo $toy['src']?>" class="card-img-top" alt="Картинка">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><?php echo $toy['name']?></h5>
+                                            <p class="card-text"><?php echo $toy['desk']?></p>
+                                            <p class="card-text"><small class="text-muted">Цена: </small><?php echo $toy['price']?> рублей</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4 mt-2">
-                                <div class="card opacity">
-                                    <img src="./img/svechi.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Название карточки</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mt-2">
-                                <div class="card opacity">
-                                    <img src="./img/svechi.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Название карточки</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mt-2">
-                                <div class="card opacity">
-                                    <img src="./img/svechi.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Название карточки</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mt-2">
-                                <div class="card opacity">
-                                    <img src="./img/svechi.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Название карточки</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php endforeach; ?>
 
                         </div>
                     </div>
@@ -129,7 +101,6 @@
         </div>
 
     </div>
-    <div class="col"></div>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
