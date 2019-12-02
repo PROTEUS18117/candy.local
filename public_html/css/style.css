@@ -97,10 +97,15 @@ c
 
 .color {
     color:#ffffff;
-    -webkit-text-stroke: 0.5px #000000;
+    -webkit-text-stroke: 0.3px #000000;
+    letter-spacing: 6px;
 
 
 }
 .card {
     height: 100%;
+}
+
+.card img {
+    height: 200px !important;
 }
